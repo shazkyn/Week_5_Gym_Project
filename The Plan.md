@@ -4,23 +4,23 @@
 
 ### Members
 
-id (PK)
-name
-age
-email_address
-phone_number
+* id (PK)
+* name
+* age
+* email_address
+* phone_number
 
 ### Activities
 
-id (PK)
-activity name
-capacity
+* id (PK)
+* activity name
+* capacity
 
 ### Bookings
 
-id (PK)
-member_id
-activity_id
+* id (PK)
+* member_id
+* activity_id
 
 ## Controllers
 
@@ -51,11 +51,11 @@ get /members/:id/edit
 
 post /members/:id/delete
 * deletes the member (cascade the bookings)
-* redirect (`get /members`)
+* redirect (`/members`)
 
 post /members/:id
 * save member details
-* redirect (`get /members/:id`)
+* redirect (`/members/:id`)
 
 ### Activities
 
@@ -71,7 +71,7 @@ get /activites/new
 
 post /activites
 * save activity
-* redirect (`get /activities/:id` for new id)
+* redirect (`/activities/:id` for new id)
 
 get /activities/:id
 * view activity details
@@ -95,15 +95,15 @@ get /activities/:id/newbooking
 
 post /activities/:id/delete
 * deletes the activity
-* cascades to bookings
-* redirect (`get /activities`)
+* (cascades to bookings)
+* redirect (`/activities`)
 
 ### Bookings
 
 post /bookings
 * save the booking
-* redirect (`get /activities/:id`)
+* redirect (`/activities/:id`)
 
 post /bookings/:id/cancel
 * deletes the booking
-* redirect (`get /activities/:id` - get the activity_id from the booking)
+* redirect (`/activities/:id` - get the activity_id from the booking)
