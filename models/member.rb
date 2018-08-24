@@ -30,8 +30,6 @@ class Member
     @id = results.first()['id'].to_i
   end
 
-
-
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
@@ -64,6 +62,12 @@ class Member
    )
    WHERE id = $4"
    values = [@name, @age, @email, @phone, @id]
+   SqlRunner.run( sql, values )
+ end
+
+ def self.destroy(id)
+   sql = "DELETE FROM members WHERE id = $1"
+   values = [id]
    SqlRunner.run( sql, values )
  end
 
