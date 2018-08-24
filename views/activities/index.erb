@@ -1,0 +1,16 @@
+<h1>Activities</h1>
+
+<table>
+  <tr>
+    <th>Activity Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for activity in @activities %>
+  <tr>
+    <td><a href="/activities/<%= activity.id %>"><%= activity.name %></a></td>
+    <td>|</td>
+    <td><%= activity.capacity %></td>
+  </tr>
+  <% end %>
+</table>
