@@ -1,0 +1,7 @@
+<h2>All Members</h2>
+
+<ul>
+  <% @members.each do |member| %>
+  <li> <%= member.name %>:  <%= member.age %>:  <%= member.phone%>:  <%= member.email%></li>
+  <% end %>
+</ul>

@@ -1,16 +1,7 @@
-<h1>Activities</h1>
+<h1>Activities Available</h1>
 
-<table>
-  <tr>
-    <th>Activity Name</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% for activity in @activities %>
-  <tr>
-    <td><a href="/activities/<%= activity.id %>"><%= activity.name %></a></td>
-    <td>|</td>
-    <td><%= activity.capacity %></td>
-  </tr>
+<ul>
+  <% @activities.each do |activity| %>
+  <li> <%= activity.activity_name %>: <%= activity.capacity %> </li>
   <% end %>
-</table>
+ </ul>
