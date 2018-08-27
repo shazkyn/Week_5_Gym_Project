@@ -1,0 +1,17 @@
+<form method="post" action="/members/<%= @member.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<%= @member.name %>"/>
+
+  <label for="age">Age:</label>
+    <input id="age" type="number" name="age" value="<%= @member.age %>"/>
+
+  <label for="phone_number">Phone Number:</label>
+    <input id="phone_number" type="number" name="phone" value="<%= @member.phone %>"/>
+
+  <label for="email">Email:</label>
+    <input id="Email" type="email" name="email" value="<%= @member.email %>" />
+
+  <input type='submit' value="save"/>
+</form>

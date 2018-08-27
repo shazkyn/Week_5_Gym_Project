@@ -6,10 +6,10 @@ require_relative( '../models/activity.rb' )
 require_relative( '../models/member.rb' )
 also_reload( '../models/*' )
 
-# get '/bookings' do
-#   @booking = Booking.all
-#   erb ( :"bookings/index" )
-# end
+get '/bookings' do
+  @bookings = Booking.all
+  erb ( :"bookings/index" )
+end
 #
 # get '/bookings/new' do
 #   @activities = Activity.all

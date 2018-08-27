@@ -38,3 +38,7 @@ post '/activity/:id/delete' do
   Activity.destroy(params[:id])
   redirect to("/activities")
 end
+
+post  do
+
+end

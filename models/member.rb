@@ -60,7 +60,7 @@ class Member
    (
      $1, $2, $3, $4
    )
-   WHERE id = $4"
+   WHERE id = $5"
    values = [@name, @age, @email, @phone, @id]
    SqlRunner.run( sql, values )
  end
@@ -70,5 +70,9 @@ class Member
    values = [id]
    SqlRunner.run( sql, values )
  end
+
+  def member_is_legal?(age)
+   return true if age >= 16
+  end
 
 end

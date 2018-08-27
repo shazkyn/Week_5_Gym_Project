@@ -3,36 +3,52 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/member.rb' )
 also_reload( '../models/*' )
 
+# index
 get '/members' do
   @members = Member.all()
   erb ( :"members/index" )
 end
 
+# new
 get '/members/new' do
   @members = Member.all
-  erb(:"bookings/new")
+  erb(:"members/new")
 end
 
-get '/members/:id' do
-  @member = Member.find(params['id'].to_i)
-  erb(:"members/details")
+# create
+post '/new_member' do
+  member = Member.new(params)
+  member.save
+  redirect to("/members")
 end
 
-get '/members/:id/edit' do
-    @member = Member.find(params['id'].to_i)
+# edit
+get '/members/edit' do
+    @member = Member.find()
     erb(:"members/edit")
 end
 
-post '/members' do
+
+post '/members/id/redirect' do
   member = Member.new(params)
   member.save
-  redirect to("/members/" + member.id)
+  redirect to("/members/member.id")
 end
 
-post '/members/:id/delete' do
+# update
+put '/members/:id' do
+  binding.pry
+  member = Member.new(params)
+  member.update
+  redirect to '/members'
+end
+
+# delete
+delete '/members/:id' do
   Member.destroy(params[:id])
   redirect to("/members")
 end
+
 
 post '/members/:id' do
   member.save

@@ -1,7 +1,32 @@
+
 <h2>All Members</h2>
 
 <ul>
   <% @members.each do |member| %>
-  <li> <%= member.name %>:  <%= member.age %>:  <%= member.phone%>:  <%= member.email%></li>
+  <form method="post" action="/members/<%= member.id %>">
+    <input type="hidden" name="_method" value="put">
+  <%= member.name %>: <%= member.age %>:  <%= member.phone%>:  <%= member.email%>
+    <input type="text" name="name" value="<%= member.name %>">
+    <input type="text" name="age" value="<%= member.age %>">
+    <input type="text" name="phone" value="<%= member.phone %>">
+    <input type="text" name="email" value="<%= member.email %>">
+    <input type="submit" value="Update">
+ </form>
   <% end %>
 </ul>
+
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/members/new">New Member</a>
+</p>
+
+<!-- <p class="btn--wrapper">
+  <a class="btn btn--action" href="/members/edit">Update Member</a>
+</p> -->
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/members/delete">Delete Member</a>
+</p>
+
+
+<

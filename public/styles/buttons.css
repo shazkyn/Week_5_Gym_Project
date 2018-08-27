@@ -1,0 +1,28 @@
+.btn {
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color: papayawhip;
+  cursor:pointer;
+  font-family: 'verdana', bold;
+}
+
+.btn--book {
+  background-color: red;
+}
+
+.btn--book:hover {
+  background-color: yellow;
+}
+
+.btn--action:hover {
+  background-color: pink;
+}
+
+.btn--action {
+  background-color: red;
+}
+
+.btn--wrapper {
+  margin: 0px 0px 30px 0px;
+}

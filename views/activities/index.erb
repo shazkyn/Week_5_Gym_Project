@@ -1,7 +1,13 @@
-<h1>Activities Available</h1>
+
+<h2>Activities Available</h2>
 
 <ul>
   <% @activities.each do |activity| %>
   <li> <%= activity.activity_name %>: <%= activity.capacity %> </li>
   <% end %>
  </ul>
+<h2>Sign up for a class here:</h2>
+
+   <p class="btn--wrapper">
+     <a class="btn btn--action" href="/bookings/new">New Activity</a>
+   </p>
