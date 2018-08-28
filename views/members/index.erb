@@ -12,6 +12,10 @@
     <input type="text" name="email" value="<%= member.email %>">
     <input type="submit" value="Update">
  </form>
+ <form action="/members/<%= member.id %>/delete" method="post">
+   <input id="hidden" type="hidden" name="_method" value="delete">
+   <input type="submit" value="delete">
+ </form>
   <% end %>
 </ul>
 
@@ -19,14 +23,3 @@
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/members/new">New Member</a>
 </p>
-
-<!-- <p class="btn--wrapper">
-  <a class="btn btn--action" href="/members/edit">Update Member</a>
-</p> -->
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/members/delete">Delete Member</a>
-</p>
-
-
-<

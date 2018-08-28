@@ -15,6 +15,7 @@ end
 
 get '/activites/new' do
   @activities = Activity.all
+  binding.pry
   erb(:"activities/new")
 end
 

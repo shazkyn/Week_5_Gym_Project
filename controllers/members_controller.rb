@@ -16,7 +16,7 @@ get '/members/new' do
 end
 
 # create
-post '/new_member' do
+post '/' do
   member = Member.new(params)
   member.save
   redirect to("/members")
@@ -37,18 +37,22 @@ end
 
 # update
 put '/members/:id' do
-  binding.pry
   member = Member.new(params)
   member.update
   redirect to '/members'
 end
 
 # delete
-delete '/members/:id' do
-  Member.destroy(params[:id])
-  redirect to("/members")
-end
+# delete '/members/:id/delete' do
+#   Member.destroy(params[:id])
+#   redirect to("/members")
+# end
 
+delete '/members/:id/delete' do #delete action
+  @member = Member.find_by_id(params[:id])
+  @member.destroy
+  redirect to '/members'
+end
 
 post '/members/:id' do
   member.save

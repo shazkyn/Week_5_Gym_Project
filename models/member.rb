@@ -36,7 +36,7 @@ class Member
     return results.map { |hash| Member.new( hash ) }
   end
 
-  def self.find( id )
+  def self.find_by_id( id )
     sql = "SELECT * FROM members WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
@@ -65,9 +65,9 @@ class Member
    SqlRunner.run( sql, values )
  end
 
- def self.destroy(id)
+ def destroy
    sql = "DELETE FROM members WHERE id = $1"
-   values = [id]
+   values = [@id]
    SqlRunner.run( sql, values )
  end
 
