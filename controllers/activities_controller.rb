@@ -43,7 +43,7 @@ post '/activities' do
 end
 
 
-post '/activity/:id/delete' do
+delete '/activities/:id/delete' do
   Activity.destroy(params[:id])
   redirect to("/activities")
 end
