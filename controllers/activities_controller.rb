@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('pry-byebug')
 require_relative( '../models/activity.rb' )
 also_reload( '../models/*' )
 
@@ -28,6 +29,13 @@ end
 get '/activities/:id/edit' do
   @activity = Activity.find(params['id'].to_i)
   erb(:"activities/edit")
+end
+
+put '/activities/:id' do
+  activity = Activity.new(params)
+  # binding.pry
+  activity.update
+  redirect to '/activities'
 end
 
 

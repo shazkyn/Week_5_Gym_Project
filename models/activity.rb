@@ -58,6 +58,7 @@ class Activity
    SqlRunner.run( sql, values )
  end
 
+
  def self.destroy(id)
    sql = "DELETE FROM activities WHERE id = $1"
    values = [id]

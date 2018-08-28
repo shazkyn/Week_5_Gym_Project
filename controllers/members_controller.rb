@@ -42,12 +42,6 @@ put '/members/:id' do
   redirect to '/members'
 end
 
-# delete
-# delete '/members/:id/delete' do
-#   Member.destroy(params[:id])
-#   redirect to("/members")
-# end
-
 delete '/members/:id/delete' do #delete action
   @member = Member.find_by_id(params[:id])
   @member.destroy
