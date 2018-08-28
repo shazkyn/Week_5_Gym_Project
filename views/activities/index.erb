@@ -4,13 +4,19 @@
 <ul>
   <% @activities.each do |activity| %>
   <li> <%= activity.activity_name %>: <%= activity.capacity %> </li>
+  <input type="text" name="activity" value="<%= activity.activity_name %>">
+  <input type="text" name="capacity" value="<%= activity.capacity%>">
+  <input type="submit" value="Update">
+</form>
+<form action="/activities/<%= activity.id %>/delete" method="post">
+ <input id="hidden" type="hidden" name="_method" value="delete">
+ <input type="submit" value="delete">
+</form>
   <% end %>
  </ul>
-<h2>Sign up for a class here:</h2>
 
-
-
+<h2>Add Activity</h2>
 
    <p class="btn--wrapper">
-     <a class="btn btn--action" href="/bookings/new">New Activity</a>
+     <a class="btn btn--action" href="/activities/new">New Activity</a>
    </p>
