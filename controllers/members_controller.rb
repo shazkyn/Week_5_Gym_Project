@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/member.rb' )
+require('pry-byebug')
 also_reload( '../models/*' )
 
 # index
@@ -29,7 +30,7 @@ get '/members/edit' do
 end
 
 get '/members/:id' do
-  @member = Member.find(params['id'].to_i)
+  @member = Member.find_by_id(params['id'].to_i)
   erb( :"members/show" )
 end
 

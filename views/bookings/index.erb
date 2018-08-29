@@ -4,7 +4,7 @@
 
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.member.name %> | <a href="/activities/<%= booking.activity.id %>"><%= booking.activity.activity_name %></a></li>
+    <li> <a href="/members/<%= booking.member.id %>"><%= booking.member.name %></a></li> | <a href="/activities/<%= booking.activity.id %>"><%= booking.activity.activity_name %></a></li>
     <form action="/bookings/<%= booking.id %>/delete" method="post">
      <input id="hidden" type="hidden" name="_method" value="delete">
      <input type="submit" value="delete">

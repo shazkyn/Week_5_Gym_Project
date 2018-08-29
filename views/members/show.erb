@@ -1,6 +1,6 @@
 <h1> Memmbers  Actiivities</h1>
 
-<% activities = @activity.activity_name %>
-<%activities.each do |activity| %>
+<% member_activities = @member.activities %>
+<%member_activities.each do |activity| %>
 <li> <%= activity.activity_name %></li>
 <%end %>

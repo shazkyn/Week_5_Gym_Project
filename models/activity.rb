@@ -27,7 +27,7 @@ class Activity
   end
 
 # gets a list of members for an activity
-  def members
+  def members()
     sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.member_id = m.id WHERE b.activity_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
