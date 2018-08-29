@@ -28,6 +28,10 @@ get '/members/edit' do
     erb(:"members/edit")
 end
 
+get '/members/:id' do
+  @member = Member.find(params['id'].to_i)
+  erb( :"members/show" )
+end
 
 post '/members/id/redirect' do
   member = Member.new(params)

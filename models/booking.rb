@@ -38,7 +38,7 @@ class Booking
     results = SqlRunner.run( sql, values )
     return Activity.new( results.first )
   end
-
+  
   def member()
     sql = "SELECT * FROM members WHERE id = $1"
     values = [@member_id]

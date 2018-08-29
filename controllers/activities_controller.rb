@@ -16,7 +16,7 @@ end
 
 get '/activities/:id' do
   @activity = Activity.find(params['id'].to_i)
-  erb( :"activities/" )
+  erb( :"activities/show" )
 end
 
 # create

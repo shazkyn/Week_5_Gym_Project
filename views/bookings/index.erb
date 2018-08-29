@@ -1,6 +1,18 @@
 <h1>Bookings</h1>
 
 <!-- Loop round @bookings and create a list of all bookings -->
+
 <ul>
-  !-- PUT LOOP HERE -->
+  <% @bookings.each do |booking| %>
+    <li><%= booking.member.name %> | <a href="/activities/<%= booking.activity.id %>"><%= booking.activity.activity_name %></a></li>
+    <form action="/bookings/<%= booking.id %>/delete" method="post">
+     <input id="hidden" type="hidden" name="_method" value="delete">
+     <input type="submit" value="delete">
+    </form>
+
+  <% end %>
 </ul>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/bookings/new">New Booking</a>
+</p>

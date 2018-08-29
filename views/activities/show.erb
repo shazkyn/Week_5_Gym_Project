@@ -1,0 +1,6 @@
+<h1> Activity Attendance</h1>
+
+<% members = @activity.members %>
+<%members.each do |member| %>
+<li> <%= member.name %></li>
+<%end %>

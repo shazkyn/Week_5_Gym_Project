@@ -34,14 +34,15 @@ class Activity
     return results.map { |member| Member.new(member) }
   end
 
+
   def self.all()
     sql = "SELECT * FROM activities"
     results = SqlRunner.run( sql )
-    return results.map { |hash| Activity.new( hash ) }
+    return results.map { |hash| Activity.new(hash) }
   end
 
   def self.find( id )
-    sql = "SELECT * FROM activities WHERE id = $2"
+    sql = "SELECT * FROM activities WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
     return Activity.new( results.first )
@@ -57,7 +58,6 @@ class Activity
    values = [@activity_name, @capacity, @id]
    SqlRunner.run( sql, values )
  end
-
 
  def self.destroy(id)
    sql = "DELETE FROM activities WHERE id = $1"
