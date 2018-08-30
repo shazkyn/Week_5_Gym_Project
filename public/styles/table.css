@@ -1,0 +1,27 @@
+
+table {
+  border-spacing: 0.5rem;
+  margin-left: 2.5%;
+  width: 100%
+}
+
+.button-forms{
+  margin: 15px;
+  padding-left: 2.5%;
+}
+
+.table-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  word-wrap: break-word;
+}
+
+th, td {
+    text-align: left;
+}
+
+th{
+  text-decoration: underline;
+  font-size: 1.5em;
+}
