@@ -1,35 +1,30 @@
 
 <div>
-<h2>All Members</h2>
+  <h2>All Members</h2>
 </div>
-<ul>
+
   <% @members.each do |member| %>
   <form method="post" action="/members/<%= member.id %>">
     <input type="hidden" name="_method" value="put">
-  <%= member.name %>: <%= member.age %>:  <%= member.phone%>:  <%= member.email%>
-</div>
+    <%= member.name %>: <%= member.age %>:  <%= member.phone%>:  <%= member.email%>
 
-<div>
-    <input type="text" name="name" value="<%= member.name %>">
-    <input type="text" name="age" value="<%= member.age %>">
-    <input type="text" name="phone" value="<%= member.phone %>">
-    <input type="text" name="email" value="<%= member.email %>">
-    <input type="submit" value="Update">
-</div>
+  <div>
+      <input type="text" name="name" value="<%= member.name %>">
+      <input type="number" name="age" value="<%= member.age %>">
+      <input type="text" name="phone" value="<%= member.phone %>">
+      <input type="email" name="email" value="<%= member.email %>">
+      <input type="submit" value="Update">
+  </div>
  </form>
 
-<div>
- <form action="/members/<%= member.id %>/delete" method="post">
-   <input id="hidden" type="hidden" name="_method" value="delete">
-   <input type="submit" value="delete">
- </div>
- </form>
+ <div>
+   <form action="/members/<%= member.id %>/delete" method="post">
+     <input id="hidden" type="hidden" name="_method" value="delete">
+     <input type="submit" value="delete">
+   </form>
+  </div>
   <% end %>
-</ul>
 
-
-<div>
-<p class="btn--wrapper">
+<div class="btn--wrapper">
   <a class="btn btn--action" href="/members/new">New Member</a>
-</p>
 </div>
