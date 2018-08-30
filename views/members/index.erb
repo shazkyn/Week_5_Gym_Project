@@ -6,7 +6,6 @@
   <% @members.each do |member| %>
   <form method="post" action="/members/<%= member.id %>">
     <input type="hidden" name="_method" value="put">
-    <%= member.name %>: <%= member.age %>:  <%= member.phone%>:  <%= member.email%>
 
   <div>
       <input type="text" name="name" value="<%= member.name %>">

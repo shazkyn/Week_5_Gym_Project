@@ -40,6 +40,10 @@ nav ul li {
   text-transform: uppercase;
 }
 
+input[type=email] {
+      width: 200px;
+}
+
 ul {
   padding: 0px;
   margin: 0px;
